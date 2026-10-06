@@ -14,13 +14,16 @@ This document provides a precise, visual-by-visual design guide to build the Tel
   - Background Neutral: `#F2F2F2`
   - Dark Neutral: `#1E1E2C` / `#0A083B`
 - **Default Font**: Segoe UI / Poppins
-- **Page Canvas Backgrounds**:
-  - **Summary Page**: Insert `powerbi/assets/backgrounds/Summary.PNG` (Image Fit: Fit / Normal, Transparency: 0%).
-  - **Churn Prediction Page**: Insert `powerbi/assets/backgrounds/Prediction.PNG` (Image Fit: Fit / Normal, Transparency: 0%).
+- **Rendered Dashboards**:
+  - **Summary Page**: `powerbi/assets/Summary.png`
+  - **Churn Prediction Page**: `powerbi/assets/Prediction.png`
+- **Page Canvas Background Templates**:
+  - **Summary Page Template**: `powerbi/assets/templates/Summary_template.png` (Image Fit: Fit / Normal, Transparency: 0%).
+  - **Churn Prediction Page Template**: `powerbi/assets/templates/Prediction_template.png` (Image Fit: Fit / Normal, Transparency: 0%).
 
 ---
 
-## 2. Page 1: Summary Page (`Summary.PNG`)
+## 2. Page 1: Summary Page (`Summary.png`)
 
 ### Top KPI Cards (Top Banner)
 1. **Total Customers**:

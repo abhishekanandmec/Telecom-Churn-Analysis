@@ -92,9 +92,11 @@ telecom-churn-analysis/
 │   └── churn_prediction_model.ipynb    # Fully executed Jupyter Notebook with visual outputs
 └── powerbi/
     ├── assets/
-    │   ├── backgrounds/
-    │   │   ├── Summary.PNG             # 1280x720 canvas layout for Summary page
-    │   │   └── Prediction.PNG          # 1280x720 canvas layout for Prediction page
+    │   ├── Summary.png                 # Full rendered Summary Dashboard (1280x720)
+    │   ├── Prediction.png              # Full rendered Churn Prediction Dashboard (1280x720)
+    │   ├── templates/                  # Canvas background templates
+    │   │   ├── Summary_template.png
+    │   │   └── Prediction_template.png
     │   └── icons/
     │       ├── Ico_Gender.png          # Visual gender icon 1
     │       └── Ico_Gender2.png         # Visual gender icon 2
@@ -193,7 +195,9 @@ Title Predicted Churners = "COUNT OF PREDICTED CHURNERS : " & COUNT(Predictions[
 
 ## 🎨 Step 4: Power BI Visualizations — Summary Page
 
-- **Canvas Background**: `Summary.PNG` (1280x720 px)
+![Summary Dashboard](powerbi/assets/Summary.png)
+
+- **Canvas View**: `powerbi/assets/Summary.png` (1280x720 px)
 - **Top KPI Cards**: Total Customers (6,418), New Joiners (411), Total Churn (1,732), Churn Rate (27.0%).
 - **Demographics**:
   - Gender vs. Churn Rate (with gender indicator icons).
@@ -238,7 +242,9 @@ Title Predicted Churners = "COUNT OF PREDICTED CHURNERS : " & COUNT(Predictions[
 
 ## 🔮 Step 6: Power BI Churn Prediction Dashboard
 
-- **Canvas Background**: `Prediction.PNG` (1280x720 px)
+![Churn Prediction Dashboard](powerbi/assets/Prediction.png)
+
+- **Canvas View**: `powerbi/assets/Prediction.png` (1280x720 px)
 - **Header KPI**: `COUNT OF PREDICTED CHURNERS : 381`
 - **Right Customer Detail Grid**: Displays individual customer identifiers (`Customer_ID`), `Monthly_Charge`, `Total_Revenue`, `Total_Refunds`, and `Number_of_Referrals` for immediate intervention.
 - **Demographic & Account Segmentations**: Breakdowns of predicted churners across Age Groups, Gender, Marital Status, Contract, and State.
