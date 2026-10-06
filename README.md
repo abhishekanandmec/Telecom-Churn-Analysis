@@ -10,10 +10,10 @@ An end-to-end data analytics and machine learning portfolio project combining **
 
 In competitive subscription-based industries like telecom, customer retention is vital for sustained revenue growth. This project builds a complete, production-grade business intelligence and predictive analytics solution to:
 
-1. **Profile Historical Churn**: Analyze attrition patterns across demographic, geographic, financial, and service subscription dimensions.
-2. **Identify Root Causes**: Pinpoint the primary drivers and categories behind customer departures.
-3. **Predict At-Risk Joiners**: Train an ensemble Machine Learning model (**Random Forest**) to score newly acquired customers and flag those with high churn risk.
-4. **Empower Proactive Marketing**: Equip commercial and retention teams with interactive dashboards and targeted customer contact lists.
+1. Profile Historical Churn: Analyze attrition patterns across demographic, geographic, financial, and service subscription dimensions.
+2. Identify Root Causes: Pinpoint the primary drivers and categories behind customer departures.
+3. Predict At-Risk Joiners: Train an ensemble Machine Learning model (**Random Forest**) to score newly acquired customers and flag those with high churn risk.
+4. Empower Proactive Marketing: Equip commercial and retention teams with interactive dashboards and targeted customer contact lists.
 
 ---
 
