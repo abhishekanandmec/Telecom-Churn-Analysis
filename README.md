@@ -21,35 +21,40 @@ In competitive subscription-based industries like telecom, customer retention is
 
 ```mermaid
 flowchart TD
-    subgraph Data_Storage_and_ETL [Step 1: SQL Database & ETL]
-        A["Raw Data (Customer_Data.csv)"] --> B["Staging Table (stg_Churn)"]
-        B --> C["Data Profiling & Null Checks"]
-        C --> D["Production Table (prod_Churn)"]
-        D --> E1["vw_ChurnData (Stayed & Churned: 6,007 rows)"]
-        D --> E2["vw_JoinData (New Joiners: 411 rows)"]
+    subgraph Step1 ["Step 1: SQL Database & ETL"]
+        direction TB
+        A["Raw Data (Customer_Data.csv)<br/>6,418 Records"] --> B["Staging Table (stg_Churn)<br/>Data Profiling & Quality Checks"]
+        B --> C["Production Table (prod_Churn)<br/>ISNULL Data Cleaning"]
+        C --> D1["vw_ChurnData<br/>Historical: 6,007 Rows"]
+        C --> D2["vw_JoinData<br/>New Joiners: 411 Rows"]
     end
 
-    subgraph Power_BI_Transformations [Step 2 & 3: Power BI Data Model]
-        D --> F1["prod_Churn (Churn Status, Monthly Charge Range)"]
-        D --> F2["mapping_AgeGrp (Age Groups & Sorting)"]
-        D --> F3["mapping_TenureGrp (Tenure Groups & Sorting)"]
-        D --> F4["prod_Services (Unpivoted Service Columns)"]
-        F1 & F2 & F3 & F4 --> G["DAX Measures (Total Customers, Churn Rate, etc.)"]
+    subgraph Step2 ["Step 2 & 3: Power BI Data Model & DAX"]
+        direction TB
+        C --> E1["Calculated Columns<br/>Churn Status & Charge Range"]
+        C --> E2["Dimension Tables<br/>mapping_AgeGrp & mapping_TenureGrp"]
+        C --> E3["Unpivoted Table<br/>prod_Services"]
+        E1 --> F["DAX Measures<br/>Total Customers, Total Churn, Churn Rate%"]
+        E2 --> F
+        E3 --> F
     end
 
-    subgraph Machine_Learning [Step 5: Predictive Analytics (Python)]
-        E1 --> H["Data Preprocessing & Label Encoding"]
-        H --> I["Train/Test Split (80/20)"]
-        I --> J["Random Forest Classifier (100 Trees)"]
-        J --> K["Model Evaluation (Accuracy: 85%, Confusion Matrix)"]
-        J --> L["Feature Importance Ranking"]
-        E2 --> M["Batch Inference on New Joiners"]
-        J & M --> N["Predictions.csv (381 Predicted Churners)"]
+    subgraph Step3 ["Step 5: Machine Learning (Python)"]
+        direction TB
+        D1 --> G1["Preprocessing & Label Encoding"]
+        G1 --> G2["Train / Test Split (80/20)"]
+        G2 --> G3["Random Forest Classifier (100 Trees)"]
+        G3 --> G4["Model Evaluation (85% Accuracy)"]
+        G3 --> G5["Feature Importance Ranking"]
+        D2 --> H1["Batch Inference Pipeline"]
+        G3 --> H1
+        H1 --> H2["Predictions.csv<br/>381 At-Risk Customers"]
     end
 
-    subgraph Dashboards [Step 4 & 6: Power BI Reporting]
-        G --> O["Executive Summary Page & Tooltip Page"]
-        N --> P["Churn Prediction Page (Actionable Grid & Demographics)"]
+    subgraph Step4 ["Step 4 & 6: Power BI Reporting"]
+        direction TB
+        F --> I1["Summary Dashboard<br/>KPI Cards, Demographics, Accounts & Tooltips"]
+        H2 --> I2["Churn Prediction Dashboard<br/>Actionable Customer Grid & At-Risk Profiles"]
     end
 ```
 
