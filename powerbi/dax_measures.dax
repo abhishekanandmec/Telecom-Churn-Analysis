@@ -1,0 +1,41 @@
+// ============================================================================
+// DAX Measures Reference
+// Project: Telecom Customer Churn Analysis
+// Source: Pivotalstats Portfolio Project
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// Page 1: Summary Page Measures
+// ----------------------------------------------------------------------------
+
+// 1. Total Customers in the dataset
+Total Customers = 
+COUNT(prod_Churn[Customer_ID])
+
+// 2. Count of newly joined customers (Customer_Status = 'Joined')
+New Joiners = 
+CALCULATE(
+    COUNT(prod_Churn[Customer_ID]), 
+    prod_Churn[Customer_Status] = "Joined"
+)
+
+// 3. Total customers who churned (Sum of Churn Status where Churned = 1)
+Total Churn = 
+SUM(prod_Churn[Churn Status])
+
+// 4. Churn Rate percentage
+Churn Rate = 
+DIVIDE([Total Churn], [Total Customers], 0)
+
+
+// ----------------------------------------------------------------------------
+// Page 2: Churn Prediction Page Measures (Using Predictions Table)
+// ----------------------------------------------------------------------------
+
+// 5. Total count of customers predicted to churn
+Count Predicted Churner = 
+COUNT(Predictions[Customer_ID]) + 0
+
+// 6. Dynamic title string for dashboard card / header
+Title Predicted Churners = 
+"COUNT OF PREDICTED CHURNERS : " & COUNT(Predictions[Customer_ID])
