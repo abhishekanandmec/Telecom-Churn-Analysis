@@ -2,7 +2,7 @@
 
 An end-to-end data analytics and machine learning portfolio project combining **Microsoft SQL Server (T-SQL)**, **Power BI (Power Query & DAX)**, and **Python (Scikit-Learn Random Forest Classifier)** to analyze historical telecom customer churn patterns and predict future churn risk for newly joined customers.
 
-Based on the [Pivotalstats Churn Analysis Project Tutorial](https://pivotalstats.com/end-end-churn-analysis-portfolio-project/) and video walkthrough.
+
 
 ---
 
@@ -286,18 +286,3 @@ jupyter notebook notebooks/churn_prediction_model.ipynb
 ```
 
 ---
-
-## 🎨 Theme Colors & Visual Assets
-
-| Element | Hex Code | Swatch |
-|---|---|---|
-| Primary Indigo | `#4A44F2` | ![#4A44F2](https://via.placeholder.com/15/4A44F2/000000?text=+) |
-| Secondary Lavender | `#9B9FF2` | ![#9B9FF2](https://via.placeholder.com/15/9B9FF2/000000?text=+) |
-| Accent Light Blue | `#A0D1FF` | ![#A0D1FF](https://via.placeholder.com/15/A0D1FF/000000?text=+) |
-| Neutral Light Gray | `#F2F2F2` | ![#F2F2F2](https://via.placeholder.com/15/F2F2F2/000000?text=+) |
-
----
-
-## 👤 Author & Acknowledgements
-- Original tutorial and project concept by **Sajit Simon** ([Pivotalstats](https://pivotalstats.com/end-end-churn-analysis-portfolio-project/)).
-- Reference Video: [Power BI End to End Churn Analysis Portfolio Project | 2024](https://www.youtube.com/watch?v=QFDslca5AX8).
